@@ -1,0 +1,64 @@
+.ticket {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    'price . logo'
+    'there there there'
+    'back back back';
+}
+
+.price {
+  grid-area: price;
+  justify-self: left;
+  color: #2196f3;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.logo {
+  grid-area: logo;
+  justify-self: right;
+}
+
+.wayThere {
+  grid-area: there;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.wayBack {
+  grid-area: back;
+}
+
+.wayThere,
+.wayBack {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-transform: uppercase;
+  color: #a0b0b9;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: flex;
+  column-gap: 2px;
+}
+
+.content {
+  color: #4a4a4a;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}

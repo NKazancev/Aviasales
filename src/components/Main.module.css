@@ -1,0 +1,12 @@
+.main {
+  display: grid;
+  grid-template-columns: 232px 1fr;
+  column-gap: 20px;
+  align-items: start;
+}
+
+.tickets {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
