@@ -1,4 +1,4 @@
-import logo from '../assets/s7-logo.png';
+import logo from 'assets/s7-logo.png';
 
 import * as classes from './Ticket.module.css';
 

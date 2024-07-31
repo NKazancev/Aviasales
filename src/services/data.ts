@@ -1,6 +1,6 @@
-import { ITicket } from '../components/Ticket';
+import { ITicket } from '../components/Main/Tickets/Ticket';
 
-export const tickets: Array<ITicket> = [
+const tickets: Array<ITicket> = [
   {
     id: 1,
     price: 13400,
@@ -76,3 +76,5 @@ export const tickets: Array<ITicket> = [
     transferPlacesBack: 'HKG',
   },
 ];
+
+export default tickets;

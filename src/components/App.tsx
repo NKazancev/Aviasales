@@ -1,7 +1,7 @@
-import { tickets } from '../services/data';
+import tickets from '../services/data';
 
-import Header from './Header';
-import Main from './Main';
+import Header from './Header/Header';
+import Main from './Main/Main';
 import * as classes from './App.module.css';
 
 export default function App() {

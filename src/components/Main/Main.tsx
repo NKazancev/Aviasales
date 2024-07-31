@@ -1,8 +1,8 @@
-import Aside from './Aside';
+import Aside from './Aside/Aside';
+import Tabs from './Tabs/Tabs';
+import TicketsList, { ITickets } from './Tickets/TicketsList';
+import ShowButton from './Buttons/ShowMoreButton';
 import * as classes from './Main.module.css';
-import ShowButton from './ShowButton';
-import Tabs from './Tabs';
-import TicketsList, { ITickets } from './TicketsList';
 
 export default function Main(props: ITickets) {
   const { tickets } = props;

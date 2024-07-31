@@ -12,6 +12,13 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    'import/resolver': {
+      'eslint-import-resolver-custom-alias': {
+        alias: {
+          assets: './src/assets',
+        },
+      },
+    },
   },
   extends: [
     'airbnb',
@@ -56,8 +63,8 @@ module.exports = {
       },
     ],
     'react/react-in-jsx-scope': 'off',
-    'react/no-unused-prop-types': 'off',
     'react/prop-types': 'off',
+    'react/no-unused-prop-types': 'off',
     'prefer-template': 'off',
   },
   ignorePatterns: ['node_modules', 'build'],

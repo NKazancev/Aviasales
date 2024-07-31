@@ -37,7 +37,7 @@
 }
 
 .checkbox:checked:before {
-  content: url(../assets/check.svg);
+  content: url(assets/check.svg);
   position: absolute;
   top: 1px;
   left: 3px;
