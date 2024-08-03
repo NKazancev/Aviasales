@@ -1,23 +1,23 @@
+import { useTypedDispatch, useTypedSelector } from '../../../store/main';
+import { IFilter } from '../../../store/filterReducer';
+import { toggleCheckbox } from '../../../store/actions';
+
 import * as classes from './Aside.module.css';
 
-export interface IFilter {
-  id: string;
-  label: string;
-}
-
 export default function Aside() {
-  const filters: Array<IFilter> = [
-    { id: '1', label: 'Все' },
-    { id: '2', label: 'Без пересадок' },
-    { id: '3', label: '1 пересадка' },
-    { id: '4', label: '2 пересадки' },
-    { id: '5', label: '3 пересадки' },
-  ];
+  const filters = useTypedSelector((state) => state.filterReducer.filters);
+  const dispatch = useTypedDispatch();
 
-  const filtersList = filters.map((filter) => (
+  const filtersList = filters.map((filter: IFilter) => (
     <li key={filter.id} className={classes.item}>
       <label htmlFor={filter.id} className={classes.label}>
-        <input type="checkbox" id={filter.id} className={classes.checkbox} />
+        <input
+          type="checkbox"
+          id={filter.id}
+          checked={filter.checked}
+          onChange={() => dispatch(toggleCheckbox(filter.id))}
+          className={classes.checkbox}
+        />
         {filter.label}
       </label>
     </li>

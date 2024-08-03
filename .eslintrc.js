@@ -16,6 +16,7 @@ module.exports = {
       'eslint-import-resolver-custom-alias': {
         alias: {
           assets: './src/assets',
+          store: './src/store',
         },
       },
     },
@@ -65,6 +66,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'react/no-unused-prop-types': 'off',
+    'default-param-last': 'off',
     'prefer-template': 'off',
   },
   ignorePatterns: ['node_modules', 'build'],
