@@ -4,8 +4,8 @@ import * as classes from './Header.module.css';
 
 export default function Header() {
   return (
-    <div className={classes.container}>
+    <header className={classes.header}>
       <img src={logo} alt="logo-aviasales" />
-    </div>
+    </header>
   );
 }
