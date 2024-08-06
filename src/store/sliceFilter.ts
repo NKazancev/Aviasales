@@ -1,4 +1,4 @@
-import { IFilterAction, TOGGLE_CHECKBOX } from './actions';
+import { createSlice } from '@reduxjs/toolkit';
 
 export interface IFilter {
   id: string;
@@ -20,11 +20,12 @@ const initialState: IFilters = {
   ],
 };
 
-export const filterReducer = (state = initialState, action: IFilterAction) => {
-  if (action.type === TOGGLE_CHECKBOX) {
-    return {
-      ...state,
-      filters: state.filters.map((filter) => {
+const sliceFilter = createSlice({
+  name: 'Filter',
+  initialState,
+  reducers: {
+    toggleCheckbox(state, action) {
+      state.filters = state.filters.map((filter) => {
         if (filter.id === action.payload) {
           return { ...filter, checked: !filter.checked };
         }
@@ -49,11 +50,11 @@ export const filterReducer = (state = initialState, action: IFilterAction) => {
               .every((el) => el.checked),
           };
         }
-
         return filter;
-      }),
-    };
-  }
+      });
+    },
+  },
+});
 
-  return state;
-};
+export default sliceFilter.reducer;
+export const { toggleCheckbox } = sliceFilter.actions;

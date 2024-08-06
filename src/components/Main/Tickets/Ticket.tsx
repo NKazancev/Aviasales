@@ -1,21 +1,7 @@
 import logo from 'assets/s7-logo.png';
+import { ITicket } from 'store/sliceTickets';
 
 import * as classes from './Ticket.module.css';
-
-export interface ITicket {
-  id: number;
-  price: number;
-  destinationsThere: string;
-  destinationsBack: string;
-  timeThere: string;
-  totalTimeThere: string;
-  timeBack: string;
-  totalTimeBack: string;
-  transfersNumberThere: number;
-  transferPlacesThere: string;
-  transfersNumberBack: number;
-  transferPlacesBack: string;
-}
 
 export default function Ticket(props: ITicket) {
   const {

@@ -1,4 +1,4 @@
-import { IFilterAction, SET_SORT_BUTTON } from './actions';
+import { createSlice } from '@reduxjs/toolkit';
 
 export interface ISortButton {
   id: string;
@@ -18,11 +18,12 @@ const initialState: ISortButtons = {
   ],
 };
 
-export const sortReducer = (state = initialState, action: IFilterAction) => {
-  if (action.type === SET_SORT_BUTTON) {
-    return {
-      ...state,
-      buttons: state.buttons.map((button) => {
+const sliceSort = createSlice({
+  name: 'Filter',
+  initialState,
+  reducers: {
+    setSortButton(state, action) {
+      state.buttons = state.buttons.map((button) => {
         if (action.payload === button.id) {
           return {
             ...button,
@@ -33,9 +34,10 @@ export const sortReducer = (state = initialState, action: IFilterAction) => {
           ...button,
           active: false,
         };
-      }),
-    };
-  }
+      });
+    },
+  },
+});
 
-  return state;
-};
+export default sliceSort.reducer;
+export const { setSortButton } = sliceSort.actions;

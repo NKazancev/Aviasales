@@ -1,9 +1,7 @@
-import Ticket, { ITicket } from './Ticket';
-import * as classes from './TicketsList.module.css';
+import { ITickets } from 'store/sliceTickets';
 
-export interface ITickets {
-  tickets: Array<ITicket>;
-}
+import Ticket from './Ticket';
+import * as classes from './TicketsList.module.css';
 
 export default function TicketsList(props: ITickets) {
   const { tickets } = props;

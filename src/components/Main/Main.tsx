@@ -1,6 +1,8 @@
+import { ITickets } from 'store/sliceTickets';
+
 import Aside from './Aside/Aside';
 import Tabs from './Tabs/Tabs';
-import TicketsList, { ITickets } from './Tickets/TicketsList';
+import TicketsList from './Tickets/TicketsList';
 import ShowButton from './Buttons/ShowMoreButton';
 import * as classes from './Main.module.css';
 

@@ -13,10 +13,10 @@ module.exports = {
       version: 'detect',
     },
     'import/resolver': {
+      typescript: {},
       'eslint-import-resolver-custom-alias': {
         alias: {
           assets: './src/assets',
-          store: './src/store',
         },
       },
     },
@@ -69,5 +69,15 @@ module.exports = {
     'default-param-last': 'off',
     'prefer-template': 'off',
   },
+  overrides: [
+    {
+      files: ['./src/store/*.ts'],
+      rules: {
+        'no-param-reassign': ['error', { props: false }],
+        'no-use-before-define': 'off',
+        'no-await-in-loop': 'off',
+      },
+    },
+  ],
   ignorePatterns: ['node_modules', 'build'],
 };
