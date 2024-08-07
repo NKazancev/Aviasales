@@ -1,10 +1,11 @@
-import { useAppDispatch, useAppSelector } from 'hooks';
-import { IFilter, toggleCheckbox } from 'store/sliceFilter';
+import { IFilter } from 'models/filter';
+import { useAppDispatch, useAppSelector } from 'store/hooks';
+import { toggleCheckbox } from 'store/slices/filterSlice';
 
 import * as classes from './Aside.module.css';
 
 export default function Aside() {
-  const filters = useAppSelector((state) => state.sliceFilter.filters);
+  const filters = useAppSelector((state) => state.filterSlice.filters);
   const dispatch = useAppDispatch();
 
   const filtersList = filters.map((filter: IFilter) => (

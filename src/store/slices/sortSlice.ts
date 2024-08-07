@@ -1,14 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export interface ISortButton {
-  id: string;
-  active: boolean;
-  text: string;
-}
-
-export interface ISortButtons {
-  buttons: Array<ISortButton>;
-}
+import { ISortButtons } from 'models/sort';
 
 const initialState: ISortButtons = {
   buttons: [
@@ -18,7 +10,7 @@ const initialState: ISortButtons = {
   ],
 };
 
-const sliceSort = createSlice({
+const sortSlice = createSlice({
   name: 'Filter',
   initialState,
   reducers: {
@@ -39,5 +31,5 @@ const sliceSort = createSlice({
   },
 });
 
-export default sliceSort.reducer;
-export const { setSortButton } = sliceSort.actions;
+export default sortSlice.reducer;
+export const { setSortButton } = sortSlice.actions;

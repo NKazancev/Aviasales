@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
-import { useAppDispatch } from 'hooks';
-import { fetchTickets } from 'store/sliceTickets';
+import { fetchTickets } from 'store/slices/ticketsSlice';
+import { useAppDispatch } from 'store/hooks';
 
-import tickets from '../services/data';
+import fetchResource from '../utils/fetchResource';
 
 import Header from './Header/Header';
 import Main from './Main/Main';
@@ -13,15 +13,15 @@ export default function App() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    fetch('https://aviasales-test-api.kata.academy/search')
-      .then((res) => res.json())
-      .then((res) => dispatch(fetchTickets(res.searchId)));
+    fetchResource('https://aviasales-test-api.kata.academy/search').then(
+      (data) => dispatch(fetchTickets(data.searchId))
+    );
   }, [dispatch]);
 
   return (
     <div className={classes.app}>
       <Header />
-      <Main tickets={tickets} />
+      <Main />
     </div>
   );
 }

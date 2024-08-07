@@ -1,14 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export interface IFilter {
-  id: string;
-  checked: boolean;
-  label: string;
-}
-
-export interface IFilters {
-  filters: Array<IFilter>;
-}
+import { IFilters } from 'models/filter';
 
 const initialState: IFilters = {
   filters: [
@@ -20,7 +12,7 @@ const initialState: IFilters = {
   ],
 };
 
-const sliceFilter = createSlice({
+const filterSlice = createSlice({
   name: 'Filter',
   initialState,
   reducers: {
@@ -56,5 +48,5 @@ const sliceFilter = createSlice({
   },
 });
 
-export default sliceFilter.reducer;
-export const { toggleCheckbox } = sliceFilter.actions;
+export default filterSlice.reducer;
+export const { toggleCheckbox } = filterSlice.actions;

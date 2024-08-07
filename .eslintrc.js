@@ -66,14 +66,15 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'react/no-unused-prop-types': 'off',
+    'lines-between-class-members': 'off',
     'default-param-last': 'off',
     'prefer-template': 'off',
   },
   overrides: [
     {
-      files: ['./src/store/*.ts'],
+      files: ['./src/store/slices/*.ts'],
       rules: {
-        'no-param-reassign': ['error', { props: false }],
+        'no-param-reassign': 'off',
         'no-use-before-define': 'off',
         'no-await-in-loop': 'off',
       },

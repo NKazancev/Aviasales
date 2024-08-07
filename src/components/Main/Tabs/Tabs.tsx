@@ -1,10 +1,11 @@
-import { useAppDispatch, useAppSelector } from 'hooks';
-import { ISortButton, setSortButton } from 'store/sliceSort';
+import { ISortButton } from 'models/sort';
+import { useAppDispatch, useAppSelector } from 'store/hooks';
+import { setSortButton } from 'store/slices/sortSlice';
 
 import * as classes from './Tabs.module.css';
 
 export default function Tabs() {
-  const sortButtons = useAppSelector((state) => state.sliceSort.buttons);
+  const sortButtons = useAppSelector((state) => state.sortSlice.buttons);
   const dispatch = useAppDispatch();
 
   const activeButton = `${classes.button} ${classes.active}`;

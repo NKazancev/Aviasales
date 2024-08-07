@@ -1,13 +1,13 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import sliceFilter from './sliceFilter';
-import sliceSort from './sliceSort';
-import sliceTickets from './sliceTickets';
+import filterSlice from './slices/filterSlice';
+import ticketsSlice from './slices/ticketsSlice';
+import sortSlice from './slices/sortSlice';
 
 const rootReducer = combineReducers({
-  sliceTickets,
-  sliceFilter,
-  sliceSort,
+  ticketsSlice,
+  filterSlice,
+  sortSlice,
 });
 
 export const store = configureStore({

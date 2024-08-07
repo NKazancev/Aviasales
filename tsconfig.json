@@ -22,7 +22,9 @@
     "strict": true,
     "paths": {
       "store/*": ["./src/store/*"],
-      "hooks": ["./src/hooks"]
+      "services/*": ["./src/services/*"],
+      "models/*": ["./src/models/*"],
+      "utils/*": ["./src/utils/*"]
     }
   },
   "include": ["src/**/*"],
