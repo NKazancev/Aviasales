@@ -14,28 +14,6 @@ const initialState: ITicketsState = {
   visibleTicketsNumber: 5,
 };
 
-export const fetchTickets = createAsyncThunk(
-  'tickets/fetchTickets',
-  async (searchId: string, { dispatch, rejectWithValue }) => {
-    const url = `https://aviasales-test-api.kata.academy/tickets?searchId=${searchId}`;
-
-    let isLoaded = false;
-
-    while (!isLoaded) {
-      try {
-        const data = await fetchResource(url);
-        dispatch(addTickets(data.tickets));
-        isLoaded = data.stop;
-      } catch (error) {
-        if (isLoaded)
-          if (error instanceof Error) {
-            rejectWithValue(error.message);
-          }
-      }
-    }
-  }
-);
-
 const ticketsSlice = createSlice({
   name: 'Tickets',
   initialState,
@@ -61,5 +39,27 @@ const ticketsSlice = createSlice({
   },
 });
 
+export const fetchTickets = createAsyncThunk(
+  'tickets/fetchTickets',
+  async (searchId: string, { dispatch, rejectWithValue }) => {
+    const url = `https://aviasales-test-api.kata.academy/tickets?searchId=${searchId}`;
+
+    let isLoaded = false;
+
+    while (!isLoaded) {
+      try {
+        const data = await fetchResource(url);
+        dispatch(addTickets(data.tickets));
+        isLoaded = data.stop;
+      } catch (error) {
+        if (isLoaded)
+          if (error instanceof Error) {
+            rejectWithValue(error.message);
+          }
+      }
+    }
+  }
+);
+
 export default ticketsSlice.reducer;
-export const { addTickets } = ticketsSlice.actions;
+export const { addTickets, showMoreTickets } = ticketsSlice.actions;

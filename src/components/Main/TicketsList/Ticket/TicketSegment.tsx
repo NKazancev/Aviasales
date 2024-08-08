@@ -13,7 +13,7 @@ export default function TicketSegment(props: ITicketSegment) {
   const totalTime = dateService.getTotalTime();
 
   let transfers;
-  if (!stops.length) transfers = 'без пересадок';
+  if (!stops.length) transfers = 'прямой рейс';
   if (stops.length === 1) transfers = '1 пересадка';
   if (stops.length > 1) transfers = `${stops.length} пересадки`;
 

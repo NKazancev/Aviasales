@@ -1,6 +1,7 @@
 export interface IFilter {
   id: string;
   checked: boolean;
+  stops: number | string;
   label: string;
 }
 

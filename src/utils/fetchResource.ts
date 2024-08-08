@@ -1,4 +1,4 @@
-const fetchResource = async (url: string) => {
+export default async function fetchResource(url: string) {
   try {
     const response = await fetch(url);
     if (response.ok) {
@@ -11,6 +11,4 @@ const fetchResource = async (url: string) => {
     }
   }
   return null;
-};
-
-export default fetchResource;
+}

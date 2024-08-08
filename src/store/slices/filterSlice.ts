@@ -4,11 +4,11 @@ import { IFilters } from 'models/filter';
 
 const initialState: IFilters = {
   filters: [
-    { id: '1', checked: true, label: 'Все' },
-    { id: '2', checked: true, label: 'Без пересадок' },
-    { id: '3', checked: true, label: '1 пересадка' },
-    { id: '4', checked: true, label: '2 пересадки' },
-    { id: '5', checked: true, label: '3 пересадки' },
+    { id: '1', checked: true, stops: 'all', label: 'Все' },
+    { id: '2', checked: true, stops: 0, label: 'Без пересадок' },
+    { id: '3', checked: true, stops: 1, label: '1 пересадка' },
+    { id: '4', checked: true, stops: 2, label: '2 пересадки' },
+    { id: '5', checked: true, stops: 3, label: '3 пересадки' },
   ],
 };
 
