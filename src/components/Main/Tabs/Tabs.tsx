@@ -6,11 +6,11 @@ import * as classes from './Tabs.module.css';
 
 export default function Tabs() {
   const dispatch = useAppDispatch();
-  const sortButtons = useAppSelector((state) => state.sortSlice.buttons);
+  const { buttons } = useAppSelector((state) => state.sortSlice);
 
   const activeButton = `${classes.button} ${classes.active}`;
 
-  const sortButtonsList = sortButtons.map((button: ISortButton) => {
+  const sortButtonsList = buttons.map((button: ISortButton) => {
     return (
       <li key={button.id} className={classes.item}>
         <button
