@@ -13,14 +13,18 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(css|sass|scss)$/,
+        test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: { modules: true, importLoaders: 1 },
+            options: {
+              modules: {
+                mode: 'local',
+                localIdentName: '[hash:base64]',
+              },
+            },
           },
-          'sass-loader',
         ],
       },
     ],

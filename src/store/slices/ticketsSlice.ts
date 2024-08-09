@@ -4,13 +4,13 @@ import fetchResource from 'utils/fetchResource';
 import { ITickets } from 'models/ticket';
 
 interface ITicketsState extends ITickets {
-  loading: 'idle' | 'pending' | 'succeeded' | 'failed';
+  loadingStatus: 'idle' | 'pending' | 'succeeded' | 'failed';
   visibleTicketsNumber: number;
 }
 
 const initialState: ITicketsState = {
   tickets: [],
-  loading: 'idle',
+  loadingStatus: 'idle',
   visibleTicketsNumber: 5,
 };
 
@@ -28,13 +28,13 @@ const ticketsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchTickets.pending, (state) => {
-        state.loading = 'pending';
+        state.loadingStatus = 'pending';
       })
       .addCase(fetchTickets.fulfilled, (state) => {
-        state.loading = 'succeeded';
+        state.loadingStatus = 'succeeded';
       })
       .addCase(fetchTickets.rejected, (state) => {
-        state.loading = 'failed';
+        state.loadingStatus = 'failed';
       });
   },
 });

@@ -5,8 +5,8 @@ import { setSortButton } from 'store/slices/sortSlice';
 import * as classes from './Tabs.module.css';
 
 export default function Tabs() {
-  const sortButtons = useAppSelector((state) => state.sortSlice.buttons);
   const dispatch = useAppDispatch();
+  const sortButtons = useAppSelector((state) => state.sortSlice.buttons);
 
   const activeButton = `${classes.button} ${classes.active}`;
 

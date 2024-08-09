@@ -1,18 +1,19 @@
 import { ITicket } from 'models/ticket';
-import logo from 'assets/s7-logo.png';
 
-import * as classes from './Ticket.module.css';
 import TicketSegment from './TicketSegment';
+import * as classes from './Ticket.module.css';
 
 export default function Ticket(props: ITicket) {
-  const { price, segments } = props;
+  const { price, carrier, segments } = props;
+
+  const imgUrl = 'https://pics.avs.io/99/36/';
 
   return (
     <li className={classes.ticket}>
       <div className={classes.price}>{price} Р</div>
 
       <div className={classes.logo}>
-        <img src={logo} alt="s7-logo" />
+        <img src={`${imgUrl}${carrier}.png`} alt="logo" />
       </div>
 
       <div className={classes.wayThere}>

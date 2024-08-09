@@ -5,8 +5,18 @@
   align-items: start;
 }
 
-.tickets {
+.content {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+}
+
+@media (max-width: 740px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    margin-top: 20px;
+  }
 }

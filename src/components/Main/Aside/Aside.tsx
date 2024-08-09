@@ -1,27 +1,22 @@
 import { IFilter } from 'models/filter';
-import { useAppDispatch, useAppSelector } from 'store/hooks';
-import { toggleCheckbox } from 'store/slices/filterSlice';
+import { useAppSelector } from 'store/hooks';
 
+import Filter from './Filter/Filter';
 import * as classes from './Aside.module.css';
 
 export default function Aside() {
   const filters = useAppSelector((state) => state.filterSlice.filters);
-  const dispatch = useAppDispatch();
 
-  const filtersList = filters.map((filter: IFilter) => (
-    <li key={filter.id} className={classes.item}>
-      <label htmlFor={filter.id} className={classes.label}>
-        <input
-          type="checkbox"
-          id={filter.id}
-          checked={filter.checked}
-          onChange={() => dispatch(toggleCheckbox(filter.id))}
-          className={classes.checkbox}
-        />
-        {filter.label}
-      </label>
-    </li>
-  ));
+  const filtersList = filters.map((filter: IFilter) => {
+    return (
+      <Filter
+        key={filter.id}
+        id={filter.id}
+        checked={filter.checked}
+        label={filter.label}
+      />
+    );
+  });
 
   return (
     <div className={classes.aside}>

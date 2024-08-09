@@ -3,9 +3,9 @@ import { ISortButton } from 'models/sort';
 
 export default function sortTickets(
   tickets: Array<ITicket>,
-  sortButtons: Array<ISortButton>
+  buttons: Array<ISortButton>
 ) {
-  const activeButton = sortButtons.find((el) => el.active);
+  const activeButton = buttons.find((el) => el.active);
 
   let sortedTickets = tickets;
 

@@ -37,3 +37,10 @@
   background-color: #2196f3;
   color: white;
 }
+
+@media (max-width: 484px) {
+  .list {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
